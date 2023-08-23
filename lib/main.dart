@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Biko',
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
