@@ -79,7 +79,8 @@ class _CartPageState extends State<CartPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const OrderConfirmationPage(),
+                              builder: (context) =>
+                                  const OrderConfirmationPage(),
                             ),
                           );
                         },
@@ -140,9 +141,9 @@ class _CartPageState extends State<CartPage> {
                       builder: (BuildContext context) {
                         return AlertDialog(
                           contentPadding: const EdgeInsets.all(10),
-                          title: const Text('Remove Item(s)'),
-                          content: const Text('Are you sure you want to remove '
-                              'this item from the cart?'),
+                          title: const Text("Remove Item(s)"),
+                          content: const Text("Are you sure you want to remove "
+                              "this item from the cart?"),
                           actions: [
                             TextButton(
                               onPressed: () {
