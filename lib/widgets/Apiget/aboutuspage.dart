@@ -41,7 +41,8 @@ class _AboutPageState extends State<AboutPage> {
             return Column(
               children: [
                 Image.network(aboutPage.logo!),
-                Text(aboutPage.logoText!),
+                SizedBox(height: 20),
+                Text(aboutPage.logoText!,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
               ],
             );
           } else {
