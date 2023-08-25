@@ -151,7 +151,7 @@ class _FirstOnboardState extends State<FirstOnboard> {
                 ],
               ),
             ),
-          ), // yaha tk 1st tha a 2nd start hga
+          ), // 1st page then onwards 2nd and 3rd
 
           Center(
             child: SingleChildScrollView(
