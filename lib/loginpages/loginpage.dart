@@ -124,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          "Already have an existing Account?",
+                          "Already have an Account?",
                           style: TextStyle(fontSize: 16),
                         ),
                         TextButton(
@@ -140,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.blue,
-                                  fontSize: 20),
+                                  fontSize: 17),
                             )),
                       ],
                     )
