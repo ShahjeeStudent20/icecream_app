@@ -14,7 +14,8 @@ class _SignupPageState extends State<SignupPage> {
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   @override
   void dispose() {
@@ -77,8 +78,11 @@ class _SignupPageState extends State<SignupPage> {
                   obscureText: true,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 40),
               ElevatedButton(
+                style: const ButtonStyle(
+                  elevation: MaterialStatePropertyAll(4.0)
+                ),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
@@ -86,7 +90,12 @@ class _SignupPageState extends State<SignupPage> {
                     },
                   ));
                 },
-                child: const Text('Sign Up'),
+                child: const Padding(
+                  padding: EdgeInsets.all(14.0),
+                  child: Text('Sign Up',
+                      style:
+                          TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+                ),
               ),
             ],
           ),

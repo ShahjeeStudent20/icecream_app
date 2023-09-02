@@ -1,5 +1,6 @@
 import 'package:final_project/screens/detail_page.dart';
 import 'package:final_project/widgets/Categories/categoryitems.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -55,68 +56,82 @@ class _PopularWidgetState extends State<PopularWidget> {
                         ),
                       ));
                 },
-                child: Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: const [
-                      BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 3,
-                          blurRadius: 20,
-                          offset: Offset(0, 7))
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: Image.asset(
-                          home.image,
-                          fit: BoxFit.fitHeight,
-                          width: 120,
-                          height: 120,
-                        ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  child: Card(
+                    elevation: 2.0,
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        // boxShadow: const [
+                        //   BoxShadow(
+                        //       color: Colors.grey,
+                        //       spreadRadius: 3,
+                        //       blurRadius: 20,
+                        //       offset: Offset(0, 7))
+                        // ],
                       ),
-                      const SizedBox(height: 5),
-                      Flexible(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 30),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                home.title,
-                                style: const TextStyle(
-                                    fontSize: 22, fontWeight: FontWeight.bold),
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 3,
-                              ),
-                              const SizedBox(height: 5),
-                              RatingBar.builder(
-                                  initialRating: 5,
-                                  itemSize: 20,
-                                  direction: Axis.horizontal,
-                                  itemCount: 5,
-                                  glowColor: Colors.amber,
-                                  itemBuilder: (context, index) => const Icon(
-                                        Icons.star,
-                                        color: Colors.red,
-                                      ),
-                                  onRatingUpdate: (rating) {}),
-                              const SizedBox(height: 15),
-                              Text(
-                                home.price,
-                                style: const TextStyle(fontSize: 17),
-                              ),
-                            ],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(16),
+                            child: Image.asset(
+                              home.image,
+                              fit: BoxFit.fitHeight,
+                              width: 120,
+                              height: 120,
+                            ),
                           ),
-                        ),
+                          const SizedBox(height: 5),
+                          Flexible(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 30),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    home.title,
+                                    style: const TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        color: CupertinoColors.systemPink),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 3,
+                                  ),
+                                  const SizedBox(height: 5),
+                                  RatingBar.builder(
+                                      initialRating: 5,
+                                      itemSize: 20,
+                                      direction: Axis.horizontal,
+                                      itemCount: 5,
+                                      glowColor: Colors.amber,
+                                      itemBuilder: (context, index) => Icon(
+                                            Icons.star,
+                                            color: Colors.amber.shade600,
+                                          ),
+                                      onRatingUpdate: (rating) {}),
+                                  const SizedBox(height: 15),
+                                  Text(
+                                    home.price,
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1.2,
+                                      color: Colors.green.shade700,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               );

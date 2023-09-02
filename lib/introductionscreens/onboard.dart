@@ -25,7 +25,7 @@ class _FirstOnboardState extends State<FirstOnboard> {
   final TextStyle textStyle2 = const TextStyle(
     fontWeight: FontWeight.bold,
     color: Colors.white,
-    fontSize: 13,
+    fontSize: 18,
   );
 
   void navigateNext() {
@@ -102,18 +102,19 @@ class _FirstOnboardState extends State<FirstOnboard> {
             ),
             child: Container(
               decoration: BoxDecoration(
+                color: Colors.yellow.shade500,
                 borderRadius: BorderRadius.circular(30),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black38.withOpacity(0.04),
-                    spreadRadius: 10,
-                  ),
-                ],
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Colors.black38.withOpacity(0.04),
+                //     spreadRadius: 10,
+                //   ),
+                // ],
               ),
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.all(14),
                     child: Text(
                       text,
                       overflow: TextOverflow.clip,
@@ -121,7 +122,7 @@ class _FirstOnboardState extends State<FirstOnboard> {
                       style: textStyle,
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  //const SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -161,6 +162,7 @@ class _FirstOnboardState extends State<FirstOnboard> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 14)
                 ],
               ),
             ),
