@@ -1,5 +1,5 @@
-import 'package:final_project/loginpages/signuppage.dart';
 import 'package:final_project/screens/home_page.dart';
+import 'package:final_project/screens/loginPages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

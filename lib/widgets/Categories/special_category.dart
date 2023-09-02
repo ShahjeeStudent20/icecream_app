@@ -1,13 +1,13 @@
-import 'package:final_project/screens/cartpage.dart';
+import 'package:final_project/screens/cart_page.dart';
 import 'package:final_project/screens/detail_page.dart';
 import 'package:final_project/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import 'categoryitems.dart';
+import '../../model/category_items.dart';
 
-class IceCandyPage extends StatelessWidget {
-  const IceCandyPage({super.key});
+class SpecialPage extends StatelessWidget {
+  const SpecialPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class IceCandyPage extends StatelessWidget {
             icon: const Icon(
               Icons.arrow_back,
               size: 35,
-            ), // Back arrow icon
+            ),
             onPressed: () {
               Navigator.pushAndRemoveUntil(
                 context,
@@ -34,7 +34,7 @@ class IceCandyPage extends StatelessWidget {
             },
           ),
           title: const Text(
-            "Ice Candy",
+            "Specials",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
           ),
           centerTitle: true,
@@ -42,9 +42,9 @@ class IceCandyPage extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.pink.shade400,
-                  Colors.yellow,
-                ], // Add your desired gradient colors
+                  Colors.pink.shade100,
+                  Colors.purple.shade300,
+                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -59,9 +59,9 @@ class IceCandyPage extends StatelessWidget {
             crossAxisSpacing: 20.0,
             childAspectRatio: screenWidth > 600 ? 0.7 : 0.8,
           ),
-          itemCount: homes.length > 7 ? 3 : homes.length,
+          itemCount: homes.length > 13 ? 4 : homes.length,
           itemBuilder: (context, index) {
-            Home home = homes[index + 7];
+            Home home = homes[index + 13];
             return InkWell(
               onTap: () {
                 //yaha se routing krwa kr mein detailpage me jarha hu simple
@@ -119,7 +119,7 @@ class IceCandyPage extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => CartPage(
-                                  cartItems: DetailPage.cartitems,
+                                  cartItems: DetailPage.cartItems,
                                 ),
                               ));
                             },

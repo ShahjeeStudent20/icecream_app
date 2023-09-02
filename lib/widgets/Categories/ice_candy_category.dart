@@ -1,15 +1,13 @@
-import 'package:final_project/screens/cartpage.dart';
+import 'package:final_project/screens/cart_page.dart';
 import 'package:final_project/screens/detail_page.dart';
 import 'package:final_project/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import 'categoryitems.dart';
+import '../../model/category_items.dart';
 
-class MagnumPage extends StatelessWidget {
-  const MagnumPage({
-    super.key,
-  });
+class IceCandyPage extends StatelessWidget {
+  const IceCandyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +34,7 @@ class MagnumPage extends StatelessWidget {
             },
           ),
           title: const Text(
-            "Magnums",
+            "Ice Candy",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
           ),
           centerTitle: true,
@@ -44,8 +42,8 @@ class MagnumPage extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.brown.shade200,
-                  Colors.brown,
+                  Colors.pink.shade400,
+                  Colors.yellow,
                 ], // Add your desired gradient colors
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -61,9 +59,9 @@ class MagnumPage extends StatelessWidget {
             crossAxisSpacing: 20.0,
             childAspectRatio: screenWidth > 600 ? 0.7 : 0.8,
           ),
-          itemCount: 2, // You mentioned itemCount: 2 in your code
+          itemCount: homes.length > 7 ? 3 : homes.length,
           itemBuilder: (context, index) {
-            Home home = homes[index + 5];
+            Home home = homes[index + 7];
             return InkWell(
               onTap: () {
                 //yaha se routing krwa kr mein detailpage me jarha hu simple
@@ -121,7 +119,7 @@ class MagnumPage extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => CartPage(
-                                  cartItems: DetailPage.cartitems,
+                                  cartItems: DetailPage.cartItems,
                                 ),
                               ));
                             },

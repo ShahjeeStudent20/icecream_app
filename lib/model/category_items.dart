@@ -1,10 +1,14 @@
 class Home {
-  final title;
-  final image;
-  final price;
-  final desc;
+  final String title;
+  final String image;
+  final String price;
+  final String desc;
 
-  Home({this.title, required this.image, this.price, this.desc});
+  Home(
+      {required this.title,
+      required this.image,
+      required this.price,
+      required this.desc});
 }
 
 final List<Home> homes = [

@@ -1,5 +1,5 @@
 import 'package:final_project/screens/detail_page.dart';
-import 'package:final_project/widgets/Categories/categoryitems.dart';
+import 'package:final_project/model/category_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

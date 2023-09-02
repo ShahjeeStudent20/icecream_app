@@ -1,6 +1,6 @@
+import 'package:final_project/screens/loginPages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:final_project/loginpages/loginpage.dart';
 
 class FirstOnboard extends StatefulWidget {
   const FirstOnboard({Key? key}) : super(key: key);

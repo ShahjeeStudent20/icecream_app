@@ -1,10 +1,10 @@
-import 'package:final_project/screens/cartpage.dart';
+import 'package:final_project/screens/cart_page.dart';
 import 'package:final_project/screens/detail_page.dart';
 import 'package:final_project/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import 'categoryitems.dart';
+import '../../model/category_items.dart';
 
 class SundaePage extends StatelessWidget {
   const SundaePage({super.key});
@@ -119,7 +119,7 @@ class SundaePage extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => CartPage(
-                                  cartItems: DetailPage.cartitems,
+                                  cartItems: DetailPage.cartItems,
                                 ),
                               ));
                             },

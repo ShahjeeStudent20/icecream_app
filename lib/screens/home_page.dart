@@ -1,9 +1,9 @@
-import 'package:final_project/screens/cartpage.dart';
+import 'package:final_project/screens/cart_page.dart';
 import 'package:final_project/screens/detail_page.dart';
-import 'package:final_project/widgets/AppBars,Drawers/Appbar.dart';
-import 'package:final_project/widgets/AppBars,Drawers/DrawerWidget.dart';
-import 'package:final_project/widgets/Categories/CategoriesWidget.dart';
-import 'package:final_project/widgets/PopularItems/PopularWidget.dart';
+import 'package:final_project/widgets/AppBars,Drawers/appbar.dart';
+import 'package:final_project/widgets/AppBars,Drawers/drawer_widget.dart';
+import 'package:final_project/widgets/Categories/categories_widget.dart';
+import 'package:final_project/widgets/PopularItems/popular_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => CartPage(
-                    cartItems: DetailPage.cartitems,
+                    cartItems: DetailPage.cartItems,
                   ),
                 ));
               },

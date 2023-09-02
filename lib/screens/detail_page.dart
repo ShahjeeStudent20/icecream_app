@@ -1,7 +1,7 @@
-import 'package:final_project/screens/cartpage.dart';
+import 'package:final_project/screens/cart_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:final_project/widgets/Categories/categoryitems.dart';
+import 'package:final_project/model/category_items.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class DetailPage extends StatefulWidget {
@@ -9,7 +9,7 @@ class DetailPage extends StatefulWidget {
 
   const DetailPage({super.key, required this.home});
 
-  static List<Home> cartitems = [];
+  static List<Home> cartItems = [];
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -20,7 +20,7 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    var mystyle1 = const TextStyle(
+    var myStyle1 = const TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.bold,
       color: Colors.black,
@@ -76,7 +76,7 @@ class _DetailPageState extends State<DetailPage> {
                                 child: Text(
                                   widget.home.title.toString(),
                                   textAlign: TextAlign.left,
-                                  style: mystyle1,
+                                  style: myStyle1,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 2,
                                 ),
@@ -213,11 +213,11 @@ class _DetailPageState extends State<DetailPage> {
             InkWell(
               onTap: () {
                 setState(() {
-                  DetailPage.cartitems.add(widget.home);
+                  DetailPage.cartItems.add(widget.home);
                 });
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => CartPage(
-                    cartItems: DetailPage.cartitems,
+                    cartItems: DetailPage.cartItems,
                   ),
                 ));
               },

@@ -1,13 +1,13 @@
-import 'package:final_project/screens/cartpage.dart';
+import 'package:final_project/screens/cart_page.dart';
 import 'package:final_project/screens/detail_page.dart';
 import 'package:final_project/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import 'categoryitems.dart';
+import '../../model/category_items.dart';
 
-class ConesPage extends StatelessWidget {
-  const ConesPage({
+class MagnumPage extends StatelessWidget {
+  const MagnumPage({
     super.key,
   });
 
@@ -24,7 +24,7 @@ class ConesPage extends StatelessWidget {
             icon: const Icon(
               Icons.arrow_back,
               size: 35,
-            ),
+            ), // Back arrow icon
             onPressed: () {
               Navigator.pushAndRemoveUntil(
                 context,
@@ -36,7 +36,7 @@ class ConesPage extends StatelessWidget {
             },
           ),
           title: const Text(
-            "Cones",
+            "Magnums",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
           ),
           centerTitle: true,
@@ -44,8 +44,8 @@ class ConesPage extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.teal.shade200,
-                  Colors.green
+                  Colors.brown.shade200,
+                  Colors.brown,
                 ], // Add your desired gradient colors
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -61,9 +61,9 @@ class ConesPage extends StatelessWidget {
             crossAxisSpacing: 20.0,
             childAspectRatio: screenWidth > 600 ? 0.7 : 0.8,
           ),
-          itemCount: homes.length > 5 ? 5 : homes.length,
+          itemCount: 2, // You mentioned itemCount: 2 in your code
           itemBuilder: (context, index) {
-            Home home = homes[index];
+            Home home = homes[index + 5];
             return InkWell(
               onTap: () {
                 //yaha se routing krwa kr mein detailpage me jarha hu simple
@@ -121,7 +121,7 @@ class ConesPage extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => CartPage(
-                                  cartItems: DetailPage.cartitems,
+                                  cartItems: DetailPage.cartItems,
                                 ),
                               ));
                             },

@@ -1,10 +1,10 @@
-import 'package:final_project/loginpages/loginpage.dart';
 import 'package:final_project/screens/home_page.dart';
-import 'package:final_project/screens/myaccountdetail.dart';
+import 'package:final_project/screens/loginPages/login_page.dart';
+import 'package:final_project/screens/my_account_detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../Apiget/aboutuspage.dart';
+import '../Apiget/about_us_page.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({super.key});

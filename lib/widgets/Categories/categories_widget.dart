@@ -1,12 +1,12 @@
 // ignore_for_file: file_names
 
-import 'package:final_project/widgets/Categories/specialcategory.dart';
-import 'package:final_project/widgets/Categories/sundaecategory.dart';
+import 'package:final_project/widgets/Categories/special_category.dart';
+import 'package:final_project/widgets/Categories/sundae_category.dart';
 import 'package:flutter/material.dart';
 
-import 'conecateogry.dart';
-import 'icecandycategory.dart';
-import 'magnumcategory.dart';
+import 'cone_category.dart';
+import 'ice_candy_category.dart';
+import 'magnum_category.dart';
 
 class IceCreamCategory {
   final String name;
