@@ -1,7 +1,7 @@
+import 'package:final_project/model/category_items.dart';
 import 'package:final_project/screens/cart_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:final_project/model/category_items.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class DetailPage extends StatefulWidget {
@@ -20,25 +20,38 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    var myStyle1 = const TextStyle(
+    var myStyle1 = TextStyle(
+      fontSize: 28,
+      fontWeight: FontWeight.bold,
+      color: Colors.blue.shade600,
+    );
+    var myStyle2 = const TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.bold,
       color: Colors.black,
     );
-    var mystyle2 = const TextStyle(
-        fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black);
-    var mystyle3 = const TextStyle(fontSize: 16, color: Colors.black45);
-    var mystyle4 = const TextStyle(
-        fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black);
-    var descstyle1 = const TextStyle(
-        fontSize: 20, color: Colors.black, fontFamily: "Trajan Pro");
+    var myStyle3 = const TextStyle(
+      fontSize: 16,
+      color: Colors.black45,
+    );
+    var myStyle4 = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: Colors.green.shade600,
+    );
+    var descStyle1 = const TextStyle(
+      fontSize: 20,
+      color: Colors.black,
+      fontFamily: "Trajan Pro",
+    );
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(),
       ),
       body: Stack(
         children: [
-          Container(
+          Hero(
+            tag: 'iceImage',
             child: Image.asset(
               widget.home.image,
               height: 370,
@@ -50,7 +63,7 @@ class _DetailPageState extends State<DetailPage> {
               initialChildSize: 0.6,
               maxChildSize: 1.0,
               minChildSize: 0.5,
-              builder: (context, ScrollController) {
+              builder: (context, scrollableController) {
                 return Container(
                   padding: const EdgeInsets.all(5),
                   clipBehavior: Clip.hardEdge,
@@ -62,13 +75,17 @@ class _DetailPageState extends State<DetailPage> {
                         topRight: Radius.circular(50),
                       )),
                   child: SingleChildScrollView(
-                    controller: ScrollController,
+                    controller: scrollableController,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(
-                              top: 30, bottom: 30, right: 15, left: 15),
+                            top: 30,
+                            bottom: 30,
+                            right: 15,
+                            left: 15,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -97,32 +114,41 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 12, bottom: 30),
+                          padding: const EdgeInsets.only(
+                            left: 12,
+                            bottom: 30,
+                          ),
                           child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               RatingBar.builder(
-                                  initialRating: 5,
-                                  itemSize: 20,
-                                  minRating: 5,
-                                  direction: Axis.horizontal,
-                                  itemCount: 5,
-                                  itemBuilder: (context, index) => const Icon(
-                                        CupertinoIcons.star_fill,
-                                        color: Colors.red,
-                                      ),
-                                  onRatingUpdate: (rating) {}),
+                                initialRating: 5,
+                                itemSize: 20,
+                                minRating: 5,
+                                direction: Axis.horizontal,
+                                itemCount: 5,
+                                itemBuilder: (context, index) => Icon(
+                                  CupertinoIcons.star_fill,
+                                  color: Colors.amber.shade600,
+                                ),
+                                onRatingUpdate: (rating) {},
+                              ),
+                              const SizedBox(width: 4.0),
                               Text(
                                 "4.9 (40)",
-                                style: mystyle3,
+                                style: myStyle3,
                               ),
                             ],
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 12, bottom: 20),
+                          padding: const EdgeInsets.only(
+                            left: 12,
+                            bottom: 20,
+                          ),
                           child: Text(
                             widget.home.price.toString(),
-                            style: mystyle4,
+                            style: myStyle4,
                           ),
                         ),
                         Divider(
@@ -136,7 +162,7 @@ class _DetailPageState extends State<DetailPage> {
                                   left: 12, bottom: 20, top: 20),
                               child: Text(
                                 "Description",
-                                style: mystyle2,
+                                style: myStyle2,
                               ),
                             ),
                           ],
@@ -146,7 +172,7 @@ class _DetailPageState extends State<DetailPage> {
                               left: 8, bottom: 20, top: 20),
                           child: Text(
                             widget.home.desc.toString(),
-                            style: descstyle1,
+                            style: descStyle1,
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -191,11 +217,13 @@ class _DetailPageState extends State<DetailPage> {
                       });
                     },
                   ),
+                  const SizedBox(width: 2.0),
                   Text(
                     "$_quantity",
                     style: const TextStyle(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(width: 2.0),
                   InkWell(
                     child: const CircleAvatar(
                       radius: 15,
@@ -221,14 +249,21 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ));
               },
-              child: const Row(children: [
-                Icon(
-                  Icons.add_shopping_cart_sharp,
-                  size: 26,
-                ),
-                Text("Add To cart",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
-              ]),
+              child: const Row(
+                children: [
+                  Icon(
+                    Icons.add_shopping_cart_sharp,
+                    size: 26,
+                  ),
+                  Text(
+                    "Add To cart",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
+              ),
             ),
           ],
         ),

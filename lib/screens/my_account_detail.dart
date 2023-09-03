@@ -10,49 +10,59 @@ class MyAccount extends StatelessWidget {
         title: const Text('My Account'),
         centerTitle: true,
       ),
-      body: const SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(20.0),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 40.0),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 20),
-              Text(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(160),
+                child: Image.asset(
+                  'images/profile1.jpg',
+                  width: 250.0,
+                  height: 250.0,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(height: 20),
+              const Text(
                 'Name:',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 'Syed Ahmed Shah',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Email:',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 'syedahmedstudy18@gmail.com',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'ID:',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 '@shajee_12',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Add more details as needed
             ],
           ),

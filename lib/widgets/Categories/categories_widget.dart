@@ -27,7 +27,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
   @override
   Widget build(BuildContext context) {
     final List<IceCreamCategory> categories = [
-      IceCreamCategory(name: "Cones", image: "images/cone5.jpg"),
+      IceCreamCategory(name: "Cones", image: "images/cone.png"),
       IceCreamCategory(name: "Magnums", image: "images/magnum1.png"),
       IceCreamCategory(name: "Ice Candy", image: "images/icered.png"),
       IceCreamCategory(name: "Sundaes", image: "images/sundae3.png"),
