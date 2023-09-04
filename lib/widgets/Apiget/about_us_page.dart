@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'aboutmodel.dart';
+import '../../model/about_model.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});

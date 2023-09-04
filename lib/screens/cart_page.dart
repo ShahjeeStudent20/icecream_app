@@ -1,9 +1,9 @@
 import 'package:final_project/screens/home_page.dart';
-import 'package:final_project/screens/orderconfirm.dart';
+import 'package:final_project/screens/order_confirm.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/Categories/categoryitems.dart';
+import '../model/category_items.dart';
 
 class CartPage extends StatefulWidget {
   final List<Home> cartItems;

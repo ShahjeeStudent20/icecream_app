@@ -1,13 +1,12 @@
 // ignore_for_file: file_names
 
-import 'package:final_project/widgets/Categories/specialcategory.dart';
-import 'package:final_project/widgets/Categories/sundaecategory.dart';
-
-import 'conecateogry.dart';
+import 'package:final_project/widgets/Categories/special_category.dart';
+import 'package:final_project/widgets/Categories/sundae_category.dart';
 import 'package:flutter/material.dart';
 
-import 'icecandycategory.dart';
-import 'magnumcategory.dart';
+import 'cone_category.dart';
+import 'ice_candy_category.dart';
+import 'magnum_category.dart';
 
 class IceCreamCategory {
   final String name;
@@ -19,6 +18,7 @@ class IceCreamCategory {
 //Model is given on above then the list and whole code fot this category widget
 class CategoriesWidget extends StatefulWidget {
   const CategoriesWidget({super.key});
+
   @override
   State<CategoriesWidget> createState() => _CategoriesWidgetState();
 }
@@ -27,7 +27,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
   @override
   Widget build(BuildContext context) {
     final List<IceCreamCategory> categories = [
-      IceCreamCategory(name: "Cones", image: "images/cone5.jpg"),
+      IceCreamCategory(name: "Cones", image: "images/cone.png"),
       IceCreamCategory(name: "Magnums", image: "images/magnum1.png"),
       IceCreamCategory(name: "Ice Candy", image: "images/icered.png"),
       IceCreamCategory(name: "Sundaes", image: "images/sundae3.png"),
@@ -85,15 +85,23 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                     // height: 20,
                     width: 120,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.transparent,
+                      // You can enable border if you like form here
+                      // just uncomment the code given below.
+                      // border: Border.all(
+                      //   width: 1.0,
+                      //   color: Colors.white24,
+                      //   style: BorderStyle.solid,
+                      //   strokeAlign: BorderSide.strokeAlignCenter
+                      // ),
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 2,
-                            blurRadius: 10,
-                            offset: Offset(0, 3))
-                      ],
+                      // boxShadow: const [
+                      //   BoxShadow(
+                      //       color: Colors.grey,
+                      //       spreadRadius: 2,
+                      //       blurRadius: 10,
+                      //       offset: Offset(0, 3))
+                      // ],
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +116,11 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
                         Text(
                           category.name,
                           style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                            letterSpacing: 1.2,
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
