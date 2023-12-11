@@ -13,29 +13,6 @@ class PopularWidget extends StatefulWidget {
 class _PopularWidgetState extends State<PopularWidget> {
   @override
   Widget build(BuildContext context) {
-    // final List<IceCreamPopular> populars = [
-    //   IceCreamPopular(
-    //       title: "Matka Kulfi",
-    //       image: "images/matka kulfi.jpg",
-    //       price: "Rs 200"),
-    //   IceCreamPopular(
-    //       title: "Oreo Sandwich",
-    //       image: "images/oreosandwich.jpg",
-    //       price: "Rs 350"),
-    //   IceCreamPopular(
-    //       title: "Watermelon Ice Candy",
-    //       image: "images/watermelon ice.jpg",
-    //       price: "Rs 120"),
-    //   IceCreamPopular(
-    //       title: "Strawberry Cheesecake",
-    //       image: "images/cheesecake1.jpg",
-    //       price: "Rs 150"),
-    //   IceCreamPopular(
-    //       title: "Butterscotch Cone",
-    //       image: "images/butterscotch cone4.jpg",
-    //       price: "Rs 200"),
-    // ];
-
     return Column(
       children: [
         SizedBox(
